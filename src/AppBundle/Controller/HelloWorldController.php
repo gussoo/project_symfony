@@ -2,41 +2,19 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class HelloWorldController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/index")
      */
-    public function helloAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('myview/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
-    }
-
-     /**
-     * @Route("about", name="about")
-     */
-    public function aboutAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('myview/about.html.twig');
-    }
-
-     /**
-     * @Route("number", name="number")
-     */
-    public function numberAction()
-    {
-        $number = mt_rand(0, 100);
-
-        return $this->render('myview/number.html.twig', array(
-            'number' => $number,
+        return $this->render('AppBundle:HelloWorld:index.html.php', array(
+            // ...
         ));
     }
+
 }
